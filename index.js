@@ -1,11 +1,7 @@
 require('dotenv').config();
 const TelegramApi = require('node-telegram-bot-api')
-const express = require('express')
-const axios = require('axios')
 
-const {TEL_API_TOKEN, TELEGRAM_API_URI, PORT} = process.env;
-const URI = `/webhook/${TEL_API_TOKEN}`
-const app = express();
+const {TEL_API_TOKEN} = process.env;
 const bot = new TelegramApi(TEL_API_TOKEN, {polling: true})
 
 bot.setMyCommands([
